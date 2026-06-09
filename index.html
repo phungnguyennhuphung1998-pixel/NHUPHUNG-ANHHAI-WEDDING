@@ -36,17 +36,12 @@
 
         /* --- HERO SECTION --- */
         .hero {
-            height: 100vh;
-            display: flex;
-            flex-direction: column;
-            /* Thay đổi từ flex-start thành center để đẩy chữ xuống giữa màn hình cho thoáng, không đè mặt */
-            justify-content: center; 
-            align-items: center;
-            text-align: center;
-            position: relative;
-            /* QUAN TRỌNG: Đổi center center thành center bottom để ép ảnh lấy phần dưới, không bị mất hình trên máy tính */
-            background: url('anhnen1.jpg') no-repeat center bottom/cover;
-        }
+    /* ... các thuộc tính cũ giữ nguyên ... */
+    background-size: cover;
+    background-position: center top; /* Đổi thành center top để ưu tiên thấy mặt/thân trên trên máy tính */
+    background-repeat: no-repeat;
+    min-height: 100vh; /* Đảm bảo chiều cao phủ kín màn hình */
+}
         .hero::before {
             content: '';
             position: absolute;
@@ -108,7 +103,15 @@
         .person-card { width: 100%; position: relative; border-radius: 30px; overflow: hidden; box-shadow: 0 15px 35px rgba(0,0,0,0.4); }
         .person-card img { width: 100%; display: block; object-fit: cover; height: 550px; }
         .person-info { position: absolute; bottom: 0; left: 0; right: 0; padding: 40px 20px 25px; background: linear-gradient(to top, rgba(0,0,0,0.85), transparent); }
-        .role-text-card { font-family: 'Great Vibes', cursive; font-size: 2.8rem; margin-bottom: -5px; color: var(--metallic-gold); }
+        .role-text-card { 
+            font-family: 'Montserrat', sans-serif; 
+            font-size: 0.9rem; 
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            margin-bottom: 8px; 
+            color: var(--metallic-gold); 
+        }
         .name-text-card { font-family: 'Playfair Display', serif; font-size: 1.4rem; text-transform: uppercase; letter-spacing: 2px; font-weight: 700; color: #ffffff; }
 
         /* --- DETAILS SECTION --- */
@@ -573,9 +576,29 @@
 }
     /* Media Query cho thiết bị có màn hình nhỏ hơn 768px (điện thoại, máy tính bảng) */
 @media (max-width: 768px) {
-    .intro-quote .final-quote {
-        font-size: 3rem; /* Giảm xuống kích thước hợp lý hơn cho màn hình nhỏ */
-        margin-top: 2rem;
+    /* Cấu hình lại ảnh nền trên điện thoại để thu nhỏ và dịch chuyển hợp lý */
+    .hero {
+        background-position: center 20%; /* Dịch ảnh xuống một chút để lộ khoảng trống phía trên */
+    }
+
+    /* Đẩy toàn bộ khối chữ lên phía trên */
+    .hero-content {
+        position: absolute;
+        top: 15%; /* Càng nhỏ thì chữ càng sát lên mép trên màn hình */
+        left: 50%;
+        transform: translateX(-50%);
+        width: 90%; /* Giúp chữ không bị tràn màn hình dọc */
+        text-align: center;
+    }
+
+    /* Thu nhỏ cỡ chữ tên một chút để vừa vặn, không bị đè vào mặt cô dâu chú rể */
+    .hero-title { 
+        font-size: 2rem !important; /* Bạn có thể tăng giảm số này (ví dụ: 1.8rem hoặc 2.2rem) cho vừa mắt */
+    }
+    
+    /* Thu nhỏ khoảng cách hàng giữa các đoạn chữ */
+    .hero-subtitle {
+        margin-bottom: 5px !important;
     }
 }
     </style>
@@ -604,7 +627,7 @@
             <div class="person-card" data-aos="fade-up">
                 <img src="anh_co_dau.jpg" alt="Cô dâu">
                 <div class="person-info">
-                    <div class="role-text-card">Cô dâu</div>
+                    <div class="role-text-card">Cô dâu</div> 
                     <div class="name-text-card">NHƯ PHỤNG</div>
                 </div>
             </div>
