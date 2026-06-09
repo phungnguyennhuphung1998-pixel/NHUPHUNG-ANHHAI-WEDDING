@@ -9,6 +9,7 @@
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@1,400&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Pinyon+Script&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Alex+Brush&display=swap" rel="stylesheet">
     <style>
         :root {
     --bg-color: #fdfaf7;
@@ -38,12 +39,13 @@
             height: 100vh;
             display: flex;
             flex-direction: column;
-            justify-content: flex-start; 
-            padding-top: 10vh;
+            /* Thay đổi từ flex-start thành center để đẩy chữ xuống giữa màn hình cho thoáng, không đè mặt */
+            justify-content: center; 
             align-items: center;
             text-align: center;
             position: relative;
-            background: url('anhnen1.jpg') no-repeat center center/cover;
+            /* QUAN TRỌNG: Đổi center center thành center bottom để ép ảnh lấy phần dưới, không bị mất hình trên máy tính */
+            background: url('anhnen1.jpg') no-repeat center bottom/cover;
         }
         .hero::before {
             content: '';
@@ -52,16 +54,21 @@
             background: rgba(0, 0, 0, 0.2); 
             z-index: 1;
         }
-        .hero-content { position: relative; z-index: 2; width: 95%; } 
+        .hero-content { 
+            position: relative; 
+            z-index: 2; 
+            width: 95%; 
+            margin-bottom: 25vh; /* Đẩy cụm chữ lên trên 25% chiều cao màn hình máy tính để không chạm vào người */
+        } 
         .welcome-text { letter-spacing: 4px; font-size: 0.8rem; color: #ffffff; margin-bottom: 5px; text-transform: uppercase; }
         
         .main-title {
-    font-family: 'Pinyon Script', cursive; /* Đổi tên font tại đây */
+    font-family: 'Alex Brush', cursive;
     color: var(--metallic-gold);
     margin: 5px 0;
     line-height: 1.2;
     text-shadow: 0px 1px 0px var(--gold-light), 0px 2px 0px var(--gold-shadow), 1px 4px 6px rgba(0,0,0,0.3);
-    font-size: clamp(3rem, 11vw, 6rem); /* Tăng nhẹ size vì nét font này thanh mảnh */
+    font-size: clamp(2.5rem, 10vw, 5.5rem);
     white-space: nowrap; 
 }
 
@@ -69,10 +76,12 @@
 
         /* --- COUPLE SECTION --- */
         .couple-intro {
-            background-color: var(--moss-green);
+            /* Đổi sang màu xanh than hoàng gia đậm đà, rất hợp với tà áo đỏ */
+            background-color: #0b1325; 
+            
             padding: 100px 20px;
             text-align: center;
-            color: #ffffff;
+            color: #ffffff; /* Giữ chữ màu trắng để nổi bật trên nền tối */
             position: relative;
             overflow: hidden;
             display: flex;
@@ -85,7 +94,12 @@
         
         .intro-quote { position: relative; z-index: 2; margin-bottom: 60px; width: 100%; }
         .intro-quote h2 { font-family: 'Playfair Display', serif; font-size: 1.8rem; letter-spacing: 2px; text-transform: uppercase; margin: 0; }
-        .line { width: 1px; height: 60px; background-color: rgba(255,255,255,0.3); margin: 20px auto; }
+        .line { 
+            width: 1px; 
+            height: 60px; 
+            background-color: var(--metallic-gold); /* Đổi từ màu trắng sang màu vàng gold */
+            margin: 20px auto; 
+        }
         
         .couple-grid { 
             position: relative; z-index: 2; display: flex; flex-direction: column; gap: 40px; 
