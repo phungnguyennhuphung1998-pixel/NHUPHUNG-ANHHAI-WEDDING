@@ -8,17 +8,21 @@
     <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Montserrat:wght@300;400;600&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@1,400&display=swap" rel="stylesheet">
-    
+    <link href="https://fonts.googleapis.com/css2?family=Pinyon+Script&display=swap" rel="stylesheet">
     <style>
         :root {
-            --bg-color: #fdfaf7;
-            --moss-green: #2d3e2d; 
-            --metallic-gold: #d4af37; 
-            --gold-light: #fff3d6;
-            --gold-shadow: #8a6d3b;
-            --text-dark: #333;
-            --calendar-green: #78a55a;
-        }
+    --bg-color: #fdfaf7;
+    --moss-green: #900c3f; /* Đã đổi từ Xanh rêu sang Đỏ nhung quý phái */
+    /* Bạn có thể thử các mã đỏ khác: 
+       #800000 (Đỏ bordeaux), #a30000 (Đỏ truyền thống) */
+    
+    --metallic-gold: #d4af37; 
+    --gold-light: #fff3d6;
+    --gold-shadow: #8a6d3b;
+    --text-dark: #333;
+    
+    --calendar-green: #c70039; /* Đã đổi màu chấm lịch từ Xanh sang Đỏ tươi làm điểm nhấn */
+}
 
         body {
             margin: 0; padding: 0;
@@ -52,14 +56,14 @@
         .welcome-text { letter-spacing: 4px; font-size: 0.8rem; color: #ffffff; margin-bottom: 5px; text-transform: uppercase; }
         
         .main-title {
-            font-family: 'Great Vibes', cursive;
-            color: var(--metallic-gold);
-            margin: 5px 0;
-            line-height: 1.2;
-            text-shadow: 0px 1px 0px var(--gold-light), 0px 2px 0px var(--gold-shadow), 1px 4px 6px rgba(0,0,0,0.3);
-            font-size: clamp(2.2rem, 9vw, 5rem); 
-            white-space: nowrap; 
-        }
+    font-family: 'Pinyon Script', cursive; /* Đổi tên font tại đây */
+    color: var(--metallic-gold);
+    margin: 5px 0;
+    line-height: 1.2;
+    text-shadow: 0px 1px 0px var(--gold-light), 0px 2px 0px var(--gold-shadow), 1px 4px 6px rgba(0,0,0,0.3);
+    font-size: clamp(3rem, 11vw, 6rem); /* Tăng nhẹ size vì nét font này thanh mảnh */
+    white-space: nowrap; 
+}
 
         .wedding-date { border-top: 1px solid #ffffff; border-bottom: 1px solid #ffffff; padding: 5px 20px; font-size: 1rem; display: inline-block; letter-spacing: 3px; color: #ffffff; margin-top: 10px; }
 
@@ -569,7 +573,7 @@
         <div class="hero-content" data-aos="fade-up">
             <p class="welcome-text">WELCOME TO OUR WEDDING</p>
             <h1 class="main-title">Như Phụng & Anh Hài</h1>
-            <div class="wedding-date">01 . 05 . 2026</div>
+            <div class="wedding-date">20 . 06 . 2026</div>
         </div>
     </section>
 
@@ -700,25 +704,22 @@
 </div>
         
         <div style="display:none;">
-            <img src="15.jpg" onclick="openLightbox(4)">
-            <img src="16.jpg" onclick="openLightbox(5)">
-            <img src="5.jpg" onclick="openLightbox(6)">
-            <img src="6.jpg" onclick="openLightbox(7)">
-            <img src="7.jpg" onclick="openLightbox(8)">
-            <img src="23.jpg" onclick="openLightbox(9)">
-            <img src="8.jpg" onclick="openLightbox(10)">
+            <img src="4.jpg" onclick="openLightbox(4)">
+            <img src="5.jpg" onclick="openLightbox(5)">
+            <img src="6.jpg" onclick="openLightbox(6)">
+            <img src="7.jpg" onclick="openLightbox(7)">
+            <img src="8.jpg" onclick="openLightbox(8)">
+            <img src="9.jpg" onclick="openLightbox(9)">
+            <img src="10.jpg" onclick="openLightbox(10)">
             <img src="11.jpg" onclick="openLightbox(11)">
             <img src="12.jpg" onclick="openLightbox(12)">
             <img src="13.jpg" onclick="openLightbox(13)">
             <img src="14.jpg" onclick="openLightbox(14)">
-            <img src="18.jpg" onclick="openLightbox(15)">
-            <img src="19.jpg" onclick="openLightbox(16)">
-            <img src="20.jpg" onclick="openLightbox(17)">
-            <img src="21.jpg" onclick="openLightbox(18)">
-            <img src="22.jpg" onclick="openLightbox(19)">
-            <img src="9.jpg" onclick="openLightbox(20)">
-            <img src="17.jpg" onclick="openLightbox(21)">
-            <img src="10.jpg" onclick="openLightbox(22)">
+            <img src="15.jpg" onclick="openLightbox(15)">
+            <img src="16.jpg" onclick="openLightbox(16)">
+            <img src="17.jpg" onclick="openLightbox(17)">
+            <img src="18.jpg" onclick="openLightbox(18)">
+            <img src="19.jpg" onclick="openLightbox(19)">
         </div>
     </div>
 </section>
