@@ -35,41 +35,37 @@
         }
 
        /* Khối bao quanh phần đầu trang */
-.hero {
-    position: relative;
-    width: 100%;
-    min-height: 100vh;
-    /* Hãy kiểm tra lại đường dẫn ảnh ở dòng dưới xem có đúng tên file ảnh của bạn không nhé */
-    background-image: url('anh_nen_cua_ban.jpg'); 
-    background-size: cover;
-    background-position: center top; /* Đảm bảo máy tính sẽ nhìn thấy từ đầu/mặt trở xuống */
-    background-repeat: no-repeat;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    overflow: hidden;
-}
-
-/* Khối chứa chữ (Tên + Ngày tháng) */
-.hero-content {
-    position: relative;
-    text-align: center;
-    width: 100%;
-    max-width: 800px;
-    padding: 20px;
-    z-index: 2; /* Đảm bảo chữ nổi lên trên ảnh và hoa rơi */
-}
+/* --- HERO SECTION --- */
+        .hero {
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start; 
+            padding-top: 10vh;
+            align-items: center;
+            text-align: center;
+            position: relative;
+            background: url('anhnen1.webp') no-repeat center center/cover;
+        }
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background: rgba(0, 0, 0, 0.2); 
+            z-index: 1;
+        }
+        .hero-content { position: relative; z-index: 2; width: 95%; } 
         .welcome-text { letter-spacing: 4px; font-size: 0.8rem; color: #ffffff; margin-bottom: 5px; text-transform: uppercase; }
         
         .main-title {
-    font-family: 'Alex Brush', cursive;
-    color: var(--metallic-gold);
-    margin: 5px 0;
-    line-height: 1.2;
-    text-shadow: 0px 1px 0px var(--gold-light), 0px 2px 0px var(--gold-shadow), 1px 4px 6px rgba(0,0,0,0.3);
-    font-size: clamp(2.5rem, 10vw, 5.5rem);
-    white-space: nowrap; 
-}
+            font-family: 'Great Vibes', cursive;
+            color: var(--metallic-gold);
+            margin: 5px 0;
+            line-height: 1.2;
+            text-shadow: 0px 1px 0px var(--gold-light), 0px 2px 0px var(--gold-shadow), 1px 4px 6px rgba(0,0,0,0.3);
+            font-size: clamp(2.2rem, 9vw, 5rem); 
+            white-space: nowrap; 
+        }
 
         .wedding-date { border-top: 1px solid #ffffff; border-bottom: 1px solid #ffffff; padding: 5px 20px; font-size: 1rem; display: inline-block; letter-spacing: 3px; color: #ffffff; margin-top: 10px; }
 
@@ -603,10 +599,16 @@
     }
 
     /* Thu nhỏ khoảng cách dòng chữ ngày tháng */
-    .hero-subtitle {
-        font-size: 0.9rem !important;
-        margin-top: 5px;
-    }
+   /* Đảm bảo dòng chữ WELCOME TO OUR WEDDING luôn hiện rõ */
+.hero-subtitle {
+    color: #ffffff !important; /* Ép chữ chuyển sang màu trắng */
+  font-size: 0.8rem !important;
+    text-transform: uppercase;
+    letter-spacing: 1px !important;
+    margin-bottom: 8px !important;
+    opacity: 1 !important; /* Đảm bảo không bị mờ ẩn đi */
+    display: block !important; /* Buộc phải hiển thị ra màn hình */
+}
 }
     </style>
 </head>
