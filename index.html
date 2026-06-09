@@ -34,27 +34,31 @@
             line-height: 1.6;
         }
 
-        /* --- HERO SECTION --- */
-        .hero {
-    /* ... các thuộc tính cũ giữ nguyên ... */
+       /* Khối bao quanh phần đầu trang */
+.hero {
+    position: relative;
+    width: 100%;
+    min-height: 100vh;
+    /* Hãy kiểm tra lại đường dẫn ảnh ở dòng dưới xem có đúng tên file ảnh của bạn không nhé */
+    background-image: url('anh_nen_cua_ban.jpg'); 
     background-size: cover;
-    background-position: center top; /* Đổi thành center top để ưu tiên thấy mặt/thân trên trên máy tính */
+    background-position: center top; /* Đảm bảo máy tính sẽ nhìn thấy từ đầu/mặt trở xuống */
     background-repeat: no-repeat;
-    min-height: 100vh; /* Đảm bảo chiều cao phủ kín màn hình */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
 }
-        .hero::before {
-            content: '';
-            position: absolute;
-            top: 0; left: 0; right: 0; bottom: 0;
-            background: rgba(0, 0, 0, 0.2); 
-            z-index: 1;
-        }
-        .hero-content { 
-            position: relative; 
-            z-index: 2; 
-            width: 95%; 
-            margin-bottom: 25vh; /* Đẩy cụm chữ lên trên 25% chiều cao màn hình máy tính để không chạm vào người */
-        } 
+
+/* Khối chứa chữ (Tên + Ngày tháng) */
+.hero-content {
+    position: relative;
+    text-align: center;
+    width: 100%;
+    max-width: 800px;
+    padding: 20px;
+    z-index: 2; /* Đảm bảo chữ nổi lên trên ảnh và hoa rơi */
+}
         .welcome-text { letter-spacing: 4px; font-size: 0.8rem; color: #ffffff; margin-bottom: 5px; text-transform: uppercase; }
         
         .main-title {
