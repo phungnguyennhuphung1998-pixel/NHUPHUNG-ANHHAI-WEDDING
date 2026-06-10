@@ -45,7 +45,7 @@
     text-align: center;
     position: relative;
     /* Dòng gốc của bạn: */
-    background: url('anhnen1.jpg') no-repeat center center/cover;
+    background: #fdfaf7 url('anhnen1.jpg') no-repeat center 15%/cover;
 }
         .hero::before {
             content: '';
@@ -606,10 +606,12 @@
     /* Media Query cho thiết bị có màn hình nhỏ hơn 768px (điện thoại, máy tính bảng) */
 @media (max-width: 768px) {
     .hero {
-        /* Đẩy ảnh nền xuống một chút trên điện thoại để lộ khoảng trống phía trên cho chữ */
-        background-position: center 15%; 
-        align-items: flex-start; /* Đẩy khối chữ lên phía trên */
-        padding-top: 40px; /* Khoảng cách từ mép trên màn hình đến chữ */
+        /* Điện thoại: Ép ảnh phủ kín toàn bộ màn hình (Full), không để lại khoảng trống */
+        background-size: cover !important;
+        background-position: center center !important; /* Hoặc center 15% tùy bạn muốn căn chỉnh */
+        
+        align-items: flex-start; 
+        padding-top: 40px; 
     }
 
     .hero-content {
