@@ -123,9 +123,17 @@
         }
         
         .couple-grid { 
-            position: relative; z-index: 2; display: flex; flex-direction: column; gap: 40px; 
-            width: 100%; max-width: 450px; margin: 0 auto; align-items: center; 
-        }
+    position: relative; 
+    z-index: 2; 
+    display: flex; 
+    flex-direction: row; /* Thay 'column' thành 'row' để mặc định song song trên Máy tính */
+    justify-content: center; /* Căn giữa 2 khối ảnh */
+    gap: 40px; 
+    width: 100%; 
+    max-width: 950px; /* Tăng từ 450px lên 950px để đủ khoảng trống cho 2 ảnh đứng cạnh nhau */
+    margin: 0 auto; 
+    align-items: center; 
+}
         .person-card { width: 100%; position: relative; border-radius: 30px; overflow: hidden; box-shadow: 0 15px 35px rgba(0,0,0,0.4); }
         .person-card img { width: 100%; display: block; object-fit: cover; height: 550px; }
         .person-info { position: absolute; bottom: 0; left: 0; right: 0; padding: 40px 20px 25px; background: linear-gradient(to top, rgba(0,0,0,0.85), transparent); }
@@ -398,7 +406,11 @@
             .photo-grid { gap: 10px; } #guest-name { min-width: 200px; font-size: 1.4rem; }
             .color-circle { width: 45px; height: 45px; }
         }
-        @media (min-width: 768px) { .couple-grid { flex-direction: row; max-width: 900px; } }
+        @media (min-width: 768px) { .couple-grid { 
+        flex-direction: column !important; /* Điện thoại: Ép chuyển thành hàng dọc (trên dưới) */
+        max-width: 450px !important; /* Thu nhỏ khung cho vừa màn hình điện thoại */
+        gap: 20px !important;
+    } }
 
         /* --- EFFECT: FALLING ELEMENTS --- */
         .particle {
