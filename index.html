@@ -57,15 +57,22 @@
         .hero-content { position: relative; z-index: 2; width: 95%; } 
         .welcome-text { letter-spacing: 4px; font-size: 0.8rem; color: #ffffff; margin-bottom: 5px; text-transform: uppercase; }
         
-        .main-title {
-            font-family: 'Great Vibes', cursive;
-            color: var(--metallic-gold);
-            margin: 5px 0;
-            line-height: 1.2;
-            text-shadow: 0px 1px 0px var(--gold-light), 0px 2px 0px var(--gold-shadow), 1px 4px 6px rgba(0,0,0,0.3);
-            font-size: clamp(2.2rem, 9vw, 5rem); 
-            white-space: nowrap; 
-        }
+       /* --- TÌM VÀ THAY THẾ TOÀN BỘ LỚP .main-title THÀNH ĐOẠN NÀY --- */
+.main-title {
+    font-family: 'Alex Brush', cursive; /* Đổi sang font nét thanh nét đậm uốn lượn mềm mại */
+    color: #e5c158; /* Màu vàng gold sáng sang trọng gần giống ảnh mẫu */
+    margin: 10px 0;
+    line-height: 1.1;
+    font-weight: 400;
+    
+    /* Hiệu ứng đổ bóng mô phỏng ánh kim tuyến vàng nổi 3D nhẹ */
+    text-shadow: 1px 1px 1px rgba(255, 255, 255, 0.6), 
+                 0 0 8px rgba(212, 175, 55, 0.4), 
+                 1px 3px 5px rgba(0, 0, 0, 0.15);
+                 
+    font-size: clamp(2.8rem, 10vw, 5.5rem); /* Tăng nhẹ cỡ chữ vì font này có nét thanh mảnh hơn */
+    white-space: nowrap; 
+}
 
         .wedding-date { border-top: 1px solid #ffffff; border-bottom: 1px solid #ffffff; padding: 5px 20px; font-size: 1rem; display: inline-block; letter-spacing: 3px; color: #ffffff; margin-top: 10px; }
 
