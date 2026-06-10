@@ -111,7 +111,7 @@
 /* --- THÊM NGAY ĐOẠN NÀY VÀO DƯỚI ĐOẠN TRÊN --- */
 .intro-quote .final-quote {
     font-family: "Playfair Display", "Times New Roman", serif;
-    font-size: 3.8rem; /* Cho câu 2 to hẳn lên trên Web (1.8rem < 2.8rem) */
+    font-size: 2.8rem; /* Cho câu 2 to hẳn lên trên Web (1.8rem < 2.8rem) */
     font-weight: 600;
     color: #ffffff; /* Hoặc đổi màu chữ tùy ý bạn */
     letter-spacing: 0.1rem;
@@ -176,12 +176,16 @@
             font-weight: 400;
         }
 
-        .full-names-display {
-            margin: 0 0 30px 0;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-        }
+       .full-names-display {
+    display: flex;
+    flex-direction: row !important; /* BẮT BUỘC: Máy tính hiển thị hàng ngang (song song) */
+    align-items: center;
+    justify-content: center;
+    gap: 30px; /* Khoảng cách giữa cô dâu và chú rể trên máy tính */
+    width: 100%;
+    max-width: 1000px;
+    margin: 0 auto;
+}
         .role-title { font-family: 'Playfair Display', serif; font-size: 0.8rem; text-transform: uppercase; letter-spacing: 3px; margin-bottom: 5px; opacity: 0.7; }
         .name-display { 
             font-family: 'Playfair Display', serif; 
@@ -664,25 +668,21 @@
         padding: 0 15px !important;
         display: block !important;
     }
-
-    /* 2. Ép toàn bộ khối thông tin tên Cô Dâu / Chú Rể xếp thành hàng dọc (trên dưới) */
+@media (max-width: 768px) {
+    
     .full-names-display {
-        flex-direction: column !important; /* Chuyển từ song song sang hàng dọc */
-        gap: 10px !important; /* Thu hẹp khoảng cách giữa các dòng */
-        width: 100% !important;
-        padding: 0 10px !important;
-        box-sizing: border-box !important;
+        flex-direction: column !important; /* BẮT BUỘC: Điện thoại hiển thị hàng dọc (trên dưới) */
+        gap: 15px !important; /* Thu hẹp khoảng cách dòng trên điện thoại */
+        text-align: center !important;
     }
 
-    /* 3. Tự động co nhỏ và ngắt dòng tên "Lucia PHÙNG NGUYỄN NHƯ PHỤNG" gọn gàng */
+    /* Đảm bảo tên không bị tràn màn hình điện thoại */
     .name-display {
-        font-size: 1.3rem !important; /* Hạ cỡ chữ xuống mức vừa vặn cho di động */
-        white-space: normal !important; /* Bắt buộc xuống dòng khi chạm rìa màn hình */
-        word-wrap: break-word !important; /* Bẻ đôi chữ thông minh nếu màn hình quá nhỏ */
-        line-height: 1.4 !important;
-        text-align: center !important;
-        display: block !important;
+        font-size: 1.3rem !important; 
+        white-space: normal !important; /* Cho phép xuống dòng */
+        word-wrap: break-word !important;
     }
+
 
     /* 4. Định dạng lại ký tự & cho cân đối giữa hàng trên và hàng dưới */
     .ampersand {
