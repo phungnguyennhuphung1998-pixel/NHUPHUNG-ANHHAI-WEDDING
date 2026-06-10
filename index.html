@@ -59,19 +59,23 @@
         
        /* --- TÌM VÀ THAY THẾ TOÀN BỘ LỚP .main-title THÀNH ĐOẠN NÀY --- */
 .main-title {
-    font-family: 'Alex Brush', cursive; /* Đổi sang font nét thanh nét đậm uốn lượn mềm mại */
-    color: #e5c158; /* Màu vàng gold sáng sang trọng gần giống ảnh mẫu */
+    font-family: 'Alex Brush', cursive;
+    color: #e5c158;
     margin: 10px 0;
-    line-height: 1.1;
+    line-height: 1.3; /* Tăng nhẹ dòng để nếu có xuống dòng trên đt thì chữ không bị dính vào nhau */
     font-weight: 400;
     
-    /* Hiệu ứng đổ bóng mô phỏng ánh kim tuyến vàng nổi 3D nhẹ */
     text-shadow: 1px 1px 1px rgba(255, 255, 255, 0.6), 
                  0 0 8px rgba(212, 175, 55, 0.4), 
                  1px 3px 5px rgba(0, 0, 0, 0.15);
                  
-    font-size: clamp(2.6rem, 10vw, 5.5rem); /* Tăng nhẹ cỡ chữ vì font này có nét thanh mảnh hơn */
-    white-space: nowrap; 
+    /* Sử dụng clamp để tự động co giãn: Nhỏ nhất là 2.2rem trên ĐT và Lớn nhất là 5rem trên Máy tính */
+    font-size: clamp(2.2rem, 8vw, 5rem); 
+    
+    width: 100%;
+    padding: 0 15px; /* Tạo khoảng cách an toàn với 2 rìa màn hình điện thoại */
+    box-sizing: border-box;
+    display: block; 
 }
 
         .wedding-date { border-top: 1px solid #ffffff; border-bottom: 1px solid #ffffff; padding: 5px 20px; font-size: 1rem; display: inline-block; letter-spacing: 3px; color: #ffffff; margin-top: 10px; }
@@ -716,15 +720,20 @@
         <div class="announcement-text" data-aos="fade-up">Trân trọng thông báo LỄ VU QUY của</div>
 
         <div class="full-names-display" data-aos="fade-up">
-            <div class="role-title">Út Nữ</div>
-    <div class="name-display">
-        <span class="saint-name">Lucia</span> PHÙNG NGUYỄN NHƯ PHỤNG
+    <div class="couple-member-block">
+        <div class="role-title">Út Nữ</div>
+        <div class="name-display">
+            <span class="saint-name">Lucia</span> PHÙNG NGUYỄN NHƯ PHỤNG
+        </div>
     </div>
-            <span class="ampersand">&</span>
-            <div class="role-title">Út Nam</div>
-    <div class="name-display">
-        <span class="saint-name">Antôn</span> TRẦN ANH HÀI
-    </div>
+    
+    <span class="ampersand">&</span>
+    
+    <div class="couple-member-block">
+        <div class="role-title">Út Nam</div>
+        <div class="name-display">
+            <span class="saint-name">Antôn</span> TRẦN ANH HÀI
+        </div>
 
    <!-- PHẦN THÔNG TIN THÁNH LỄ -->
 <div class="ceremony-info" data-aos="fade-up" style="margin: 40px auto; max-width: 500px; padding: 25px; border: 1px double var(--metallic-gold); background: #fffcf9; border-radius: 20px;">
