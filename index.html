@@ -657,6 +657,44 @@
     opacity: 1 !important; /* Đảm bảo không bị mờ ẩn đi */
     display: block !important; /* Buộc phải hiển thị ra màn hình */
 }
+    .main-title {
+        font-size: 2.2rem !important; /* Thu nhỏ font uốn lượn lại cho vừa màn hình dọc */
+        white-space: normal !important; /* Cho phép tự động xuống dòng nếu tên quá dài */
+        line-height: 1.3 !important;
+        padding: 0 15px !important;
+        display: block !important;
+    }
+
+    /* 2. Ép toàn bộ khối thông tin tên Cô Dâu / Chú Rể xếp thành hàng dọc (trên dưới) */
+    .full-names-display {
+        flex-direction: column !important; /* Chuyển từ song song sang hàng dọc */
+        gap: 10px !important; /* Thu hẹp khoảng cách giữa các dòng */
+        width: 100% !important;
+        padding: 0 10px !important;
+        box-sizing: border-box !important;
+    }
+
+    /* 3. Tự động co nhỏ và ngắt dòng tên "Lucia PHÙNG NGUYỄN NHƯ PHỤNG" gọn gàng */
+    .name-display {
+        font-size: 1.3rem !important; /* Hạ cỡ chữ xuống mức vừa vặn cho di động */
+        white-space: normal !important; /* Bắt buộc xuống dòng khi chạm rìa màn hình */
+        word-wrap: break-word !important; /* Bẻ đôi chữ thông minh nếu màn hình quá nhỏ */
+        line-height: 1.4 !important;
+        text-align: center !important;
+        display: block !important;
+    }
+
+    /* 4. Định dạng lại ký tự & cho cân đối giữa hàng trên và hàng dưới */
+    .ampersand {
+        font-size: 1.8rem !important;
+        margin: 5px 0 !important;
+        display: block !important;
+        text-align: center !important;
+    }
+    
+    .role-title {
+        margin-top: 5px !important;
+    }
 }
     </style>
 </head>
