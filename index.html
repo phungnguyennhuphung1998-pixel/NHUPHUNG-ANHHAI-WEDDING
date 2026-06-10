@@ -852,12 +852,20 @@
     <section class="guestbook-section" id="guestbook" data-aos="fade-up">
         <div class="guestbook-container">
             <h2 class="guestbook-title">Sổ Lưu Bút</h2>
-            <form id="wishForm" class="guestbook-form" action="https://forms.gle/QNrr1sL8bMwgDHSE6">
-                <input type="text" name="entry.1580091473" class="input-field" placeholder="Nhập tên của bạn*" required>
-                <textarea name="entry.674583884" class="input-field textarea-field" placeholder="Nhập lời chúc của bạn*" required></textarea>
-                <button type="submit" class="btn-send-wish">Gửi lời chúc</button>
-            </form>
-        </div>
+
+<form id="wishForm" class="guestbook-form" action="https://docs.google.com/forms/d/e/1FAIpQLSeNBk9XnZ922vkBUMuW1yZsKHwlKikBEg39CDgeMKu7SS61Bg/formResponse" method="POST">
+    
+    <input type="text" name="entry.1580091473" class="input-field" placeholder="Nhập tên của bạn*" required>
+    
+    <textarea name="entry.674583884" class="input-field textarea-field" placeholder="Nhập lời chúc của bạn*" required></textarea>
+    
+    <button type="submit" class="btn-send-wish">Gửi lời chúc</button>
+</form>
+
+<div id="thankYouWishMessage" style="display: none; text-align: center; padding: 25px 20px; color: var(--moss-green); font-weight: bold; font-size: 1.1rem; background: #fdfaf7; border-radius: 15px; border: 1px dashed var(--moss-green); margin-top: 20px;">
+    ❤️ Cảm ơn bạn rất nhiều vì lời chúc ý nghĩa dành cho hai tụi mình!
+</div>
+        
     </section>
 
     <!-- KẾT THÚC TRANG WEB: LỊCH & CREDIT -->
@@ -992,23 +1000,35 @@
     <div id="rsvpModal" class="modal-rsvp">
         <div class="modal-rsvp-content">
             <span id="closeRSVP" class="close-modal" style="color: #333;">&times;</span>
-            <h2 style="color: var(--moss-green);">Xác nhận tham dự</h2>
-            <form id="weddingForm" action="https://forms.gle/wq4eA28JuGw9w4Gc6">
-                <input type="text" name="entry.568495053" style="width: 100%; padding: 15px; border: 1px solid #eee; border-radius: 15px; margin-bottom: 20px;" placeholder="Nhập tên của bạn" required>
-                <div style="display: flex; flex-direction: column; gap: 10px; margin-bottom: 30px;">
-                    <label class="option-item">
-                        <input type="radio" name="entry.923450313" value="Tôi sẽ đến" required>
-                        <div class="custom-check-rsvp">✓</div><span>Tôi sẽ đến</span>
-                    </label>
-                    <label class="option-item">
-                        <input type="radio" name="entry.923450313" value="Rất tiếc tôi không thể đến">
-                        <div class="custom-check-rsvp">✕</div><span>Rất tiếc tôi không thể đến</span>
-                    </label>
-                    <label class="option-item">
-                        <input type="radio" name="entry.923450313" value="Chưa chắc chắn">
-                        <div class="custom-check-rsvp">?</div><span>Chưa chắc chắn</span>
-                    </label>
-                </div>
+           <h2 style="color: var(--moss-green);">Xác nhận tham dự</h2>
+
+<form id="weddingForm" action="https://docs.google.com/forms/d/e/1FAIpQLSeNQW2s6JlB_CP_wnxLFr5FBfOvjRPhzaRdz9b1I4j5aEsMhw/formResponse" method="POST">
+    
+    <input type="text" name="entry.568495053" style="width: 100%; padding: 15px; border: 1px solid #eee; border-radius: 15px; margin-bottom: 20px;" placeholder="Nhập tên của bạn" required>
+    
+    <div style="display: flex; flex-direction: column; gap: 10px; margin-bottom: 30px;">
+        <label class="option-item">
+            <input type="radio" name="entry.923450313" value="Tôi sẽ đến" required>
+            <div class="custom-check-rsvp">✓</div><span>Tôi sẽ đến</span>
+        </label>
+        <label class="option-item">
+            <input type="radio" name="entry.923450313" value="Rất tiếc tôi không thể đến">
+            <div class="custom-check-rsvp">✕</div><span>Rất tiếc tôi không thể đến</span>
+        </label>
+        <label class="option-item">
+            <input type="radio" name="entry.923450313" value="Chưa chắc chắn">
+            <div class="custom-check-rsvp">?</div><span>Chưa chắc chắn</span>
+        </label>
+    </div>
+
+    <button type="submit" style="width: 100%; padding: 15px; background: var(--moss-green); color: white; border: none; border-radius: 15px; cursor: pointer; font-weight: bold; font-size: 1rem;">
+        GỬI XÁC NHẬN
+    </button>
+</form>
+
+<div id="thankYouMessage" style="display: none; text-align: center; padding: 30px 20px; color: var(--moss-green); font-weight: bold; font-size: 1.2rem; background: #fdfaf7; border-radius: 15px; border: 1px dashed var(--moss-green);">
+    🎉 Cảm ơn bạn đã xác nhận tham dự ngày vui của chúng mình!
+</div>
                 <button type="submit" style="width: 100%; background: var(--moss-green); color: white; padding: 18px; border-radius: 18px; border: none; font-weight: 700; cursor: pointer;">GỬI XÁC NHẬN</button>
             </form>
         </div>
@@ -1034,7 +1054,7 @@
         const guest = urlParams.get('guest');
         if (guest) { document.getElementById("guest-name").innerText = guest; }
 
-        const weddingDate = new Date("May 1, 2026 10:30:00").getTime();
+        const weddingDate = new Date("Jun 20, 2026 11:00:00").getTime();
         setInterval(function() {
             const now = new Date().getTime();
             const d = weddingDate - now;
