@@ -209,9 +209,14 @@
 
         .location-label { font-family: 'Playfair Display', serif; font-size: 1.4rem; margin-bottom: 10px; }
         .venue-name { 
-            font-family: 'Playfair Display', serif; font-size: 1rem; font-weight: 700; 
+            font-family: 'Playfair Display', serif; font-size: 1.5rem; font-weight: 700; 
             text-transform: uppercase; letter-spacing: 1px; margin-bottom: 10px;
         }
+        @media (max-width: 768px) {
+    .venue-name {
+        font-size: 1.2rem; /* Giảm từ 1.8rem xuống 1.3rem cho vừa mắt */
+        letter-spacing: 0.5px; /* Giảm bớt khoảng cách chữ nếu cần */
+    }
         .address-text { font-size: 1.05rem; opacity: 0.9; line-height: 1.6; margin-bottom: 25px; }
 
         /* --- DRESS CODE --- */
