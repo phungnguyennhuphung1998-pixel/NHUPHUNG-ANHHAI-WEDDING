@@ -87,7 +87,26 @@
         .flower-2 { bottom: -50px; left: -80px; transform: rotate(190deg); }
         
         .intro-quote { position: relative; z-index: 2; margin-bottom: 60px; width: 100%; }
-        .intro-quote h2 { font-family: 'Playfair Display', serif; font-size: 1.8rem; letter-spacing: 2px; text-transform: uppercase; margin: 0; }
+        /* --- TÌM ĐOẠN NÀY TRONG CODE CŨ --- */
+.intro-quote h2 { 
+    font-family: 'Playfair Display', serif; 
+    font-size: 1.8rem; /* Cỡ chữ câu 1 trên Web */
+    letter-spacing: 2px; 
+    text-transform: uppercase; 
+    margin: 0; 
+}
+
+/* --- THÊM NGAY ĐOẠN NÀY VÀO DƯỚI ĐOẠN TRÊN --- */
+.intro-quote .final-quote {
+    font-family: "Playfair Display", "Times New Roman", serif;
+    font-size: 2.8rem; /* Cho câu 2 to hẳn lên trên Web (1.8rem < 2.8rem) */
+    font-weight: 600;
+    color: #ffffff; /* Hoặc đổi màu chữ tùy ý bạn */
+    letter-spacing: 0.1rem;
+    line-height: 1.2;
+    text-transform: uppercase;
+    margin-top: 20px;
+}
         .line { 
             width: 1px; 
             height: 60px; 
